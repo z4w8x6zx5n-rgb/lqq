@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高中数学向量知识点图解讲义</title>
+  <style>
+    :root{
+      --ink:#1f2937;
+      --muted:#64748b;
+      --line:#d7dee8;
+      --paper:#fffdfa;
+      --soft:#f4f7fb;
+      --blue:#2563eb;
+      --green:#0f766e;
+      --red:#dc2626;
+      --amber:#b45309;
+      --violet:#6d28d9;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:#eef3f7;
+      font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;
+      line-height:1.75;
+    }
+    header{
+      background:linear-gradient(135deg,#0f766e 0%,#2563eb 70%,#1e293b 100%);
+      color:white;
+      padding:44px 24px 38px;
+    }
+    .wrap{max-width:1120px;margin:auto}
+    h1{margin:0 0 10px;font-size:36px;letter-spacing:0}
+    h2{font-size:26px;margin:0 0 18px;border-left:6px solid var(--blue);padding-left:12px}
+    h3{font-size:20px;margin:22px 0 10px}
+    p{margin:8px 0}
+    .subtitle{max-width:820px;color:#e2e8f0;font-size:17px}
+    .nav{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:10px;
+      margin-top:24px;
+    }
+    .nav a{
+      color:white;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:8px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.11);
+    }
+    main{padding:28px 18px 56px}
+    section{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:24px;
+      margin:0 auto 22px;
+      max-width:1120px;
+      box-shadow:0 10px 28px rgba(15,23,42,.06);
+    }
+    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:14px}
+    .tag{display:inline-block;font-size:13px;color:white;background:var(--green);border-radius:999px;padding:2px 10px;margin-bottom:8px}
+    .formula{
+      background:#f8fafc;
+      border:1px dashed #b6c2d2;
+      border-radius:8px;
+      padding:12px 14px;
+      font-family:"Consolas","Microsoft YaHei",monospace;
+      overflow:auto;
+    }
+    .note{border-left:4px solid var(--amber);background:#fff7ed;padding:10px 12px;border-radius:6px}
+    .example{border-left:5px solid var(--blue);background:#f8fbff;padding:14px 16px;border-radius:8px;margin-top:14px}
+    .answer{border-left:5px solid var(--green);background:#f0fdfa;padding:12px 16px;border-radius:8px;margin-top:10px}
+    .wrong{border-left:5px solid var(--red);background:#fef2f2;padding:10px 12px;border-radius:8px}
+    svg{width:100%;height:auto;display:block;background:#fbfdff;border:1px solid var(--line);border-radius:8px}
+    .caption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
+    .mini{font-size:14px;color:var(--muted)}
+    table{width:100%;border-collapse:collapse;margin-top:10px;background:white}
+    th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+    th{background:#edf2f7}
+    .steps{counter-reset:s}
+    .steps li{margin:7px 0}
+    .steps li::marker{color:var(--blue);font-weight:bold}
+    .print-tip{font-size:13px;color:#e2e8f0}
+    .sitebar{
+      background:#0f172a;
+      color:white;
+      padding:10px 18px;
+    }
+    .sitebar .wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .sitebar a{
+      color:white;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.32);
+      border-radius:8px;
+      padding:5px 10px;
+      background:rgba(255,255,255,.08);
+      font-size:14px;
+    }
+    @media (max-width:820px){
+      h1{font-size:29px}
+      .grid{grid-template-columns:1fr}
+      section{padding:18px}
+    }
+    @media print{
+      body{background:white}
+      header{background:#fff;color:#111;border-bottom:2px solid #111}
+      .subtitle,.print-tip,.nav{color:#333}
+      .nav{display:none}
+      section{box-shadow:none;break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <div class="sitebar">
+    <div class="wrap">
+      <span>高中数学知识点学习站</span>
+      <div>
+        <a href="../index.html">返回首页</a>
+        <a href="vector-test.html">进入检测卷</a>
+      </div>
+    </div>
+  </div>
+  <header>
+    <div class="wrap">
+      <h1>高中数学向量知识点图解讲义</h1>
+      <p class="subtitle">给高中生看的向量入门到高考基础：把向量当成“带方向的位移”，先看图，再落到公式。每一批都有图形、通俗解释、例题和详细解答。</p>
+      <p class="print-tip">建议学习节奏：每天 1 到 2 批，先遮住答案自己算，再看详解。</p>
+      <nav class="nav">
+        <a href="#batch1">第一批：向量是什么</a>
+        <a href="#batch2">第二批：加减与数乘</a>
+        <a href="#batch3">第三批：坐标表示</a>
+        <a href="#batch4">第四批：数量积</a>
+        <a href="#batch5">第五批：几何应用</a>
+        <a href="#batch6">第六批：空间向量</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="batch1">
+      <h2>第一批：向量是什么</h2>
+      <div class="grid">
+        <div>
+          <p><strong>向量</strong>就是既有大小又有方向的量。最常见的理解：从点 A 走到点 B，这一段“怎么走”的信息就是向量 AB。</p>
+          <div class="formula">向量 AB：起点 A，终点 B<br>长度 |AB|：这支箭头的长短<br>零向量 0：长度为 0，方向不确定</div>
+          <p>两个向量相等，不看它们画在哪里，只看<strong>长度是否相等、方向是否相同</strong>。所以同一支箭头平移到别处，仍是同一个向量。</p>
+          <div class="note">记忆句：点有位置，向量重“走法”。一支箭头搬家以后，走法不变。</div>
+        </div>
+        <div>
+          <svg viewBox="0 0 420 250" role="img" aria-label="向量AB和平移后的相等向量">
+            <defs>
+              <marker id="arrow1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"></path>
+              </marker>
+            </defs>
+            <line x1="40" y1="190" x2="370" y2="190" stroke="#d7dee8"></line>
+            <line x1="70" y1="210" x2="70" y2="35" stroke="#d7dee8"></line>
+            <line x1="90" y1="170" x2="245" y2="90" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow1)"></line>
+            <line x1="180" y1="200" x2="335" y2="120" stroke="#0f766e" stroke-width="4" marker-end="url(#arrow1)"></line>
+            <circle cx="90" cy="170" r="4" fill="#1f2937"></circle>
+            <circle cx="245" cy="90" r="4" fill="#1f2937"></circle>
+            <text x="78" y="188" font-size="16">A</text>
+            <text x="252" y="92" font-size="16">B</text>
+            <text x="122" y="115" font-size="17" fill="#2563eb">向量 AB</text>
+            <text x="224" y="165" font-size="17" fill="#0f766e">平移后仍相等</text>
+          </svg>
+          <p class="caption">相等向量：方向相同、长度相等，起点在哪里不重要。</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <h3>例题 1</h3>
+        <p>在平行四边形 ABCD 中，判断向量 AB 与向量 DC 是否相等？向量 AD 与向量 BC 是否相等？</p>
+        <div class="answer">
+          <p><strong>解：</strong>平行四边形的对边平行且相等。</p>
+          <p>向量 AB 的方向是 A 到 B；向量 DC 的方向是 D 到 C。二者方向相同、长度相等，所以 <strong>AB = DC</strong>。</p>
+          <p>向量 AD 的方向是 A 到 D；向量 BC 的方向是 B 到 C。二者方向相同、长度相等，所以 <strong>AD = BC</strong>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="batch2">
+      <h2>第二批：向量加法、减法与数乘</h2>
+      <div class="grid">
+        <div>
+          <h3>1. 加法：首尾相接</h3>
+          <p>先走向量 a，再走向量 b，总效果就是 a + b。画图时把第二支箭头的起点接到第一支箭头的终点。</p>
+          <div class="formula">若 A -> B 是 a，B -> C 是 b，则 A -> C 是 a + b</div>
+          <h3>2. 减法：共同起点，看终点</h3>
+          <p>a - b 可以理解成 a + (-b)。如果 a、b 从同一点出发，那么 b 的终点指向 a 的终点，就是 a - b。</p>
+          <h3>3. 数乘：伸缩或反向</h3>
+          <p>ka 表示把 a 的长度变成 |k| 倍。k 大于 0 同向，k 小于 0 反向，k 等于 0 变成零向量。</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 420 280" role="img" aria-label="向量加法和减法图解">
+            <defs>
+              <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"></path>
+              </marker>
+              <marker id="arrowG" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#0f766e"></path>
+              </marker>
+              <marker id="arrowR" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#dc2626"></path>
+              </marker>
+            </defs>
+            <text x="24" y="32" font-size="18" font-weight="bold">加法：首尾相接</text>
+            <line x1="45" y1="90" x2="165" y2="60" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow2)"></line>
+            <line x1="165" y1="60" x2="290" y2="130" stroke="#0f766e" stroke-width="4" marker-end="url(#arrowG)"></line>
+            <line x1="45" y1="90" x2="290" y2="130" stroke="#dc2626" stroke-width="4" marker-end="url(#arrowR)"></line>
+            <text x="95" y="60" font-size="16" fill="#2563eb">a</text>
+            <text x="230" y="88" font-size="16" fill="#0f766e">b</text>
+            <text x="145" y="128" font-size="16" fill="#dc2626">a+b</text>
+            <text x="24" y="178" font-size="18" font-weight="bold">减法：共同起点</text>
+            <line x1="70" y1="238" x2="220" y2="205" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow2)"></line>
+            <line x1="70" y1="238" x2="155" y2="145" stroke="#0f766e" stroke-width="4" marker-end="url(#arrowG)"></line>
+            <line x1="155" y1="145" x2="220" y2="205" stroke="#dc2626" stroke-width="4" marker-end="url(#arrowR)"></line>
+            <text x="138" y="232" font-size="16" fill="#2563eb">a</text>
+            <text x="91" y="180" font-size="16" fill="#0f766e">b</text>
+            <text x="190" y="171" font-size="16" fill="#dc2626">a-b</text>
+          </svg>
+        </div>
+      </div>
+      <div class="example">
+        <h3>例题 2</h3>
+        <p>已知向量 a = (2, -1)，b = (-3, 4)，求 2a - b。</p>
+        <div class="answer">
+          <p><strong>解：</strong>先数乘，再相减。</p>
+          <p>2a = 2(2, -1) = (4, -2)。</p>
+          <p>2a - b = (4, -2) - (-3, 4) = (4 + 3, -2 - 4) = <strong>(7, -6)</strong>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="batch3">
+      <h2>第三批：坐标表示，把图变成数</h2>
+      <div class="grid">
+        <div>
+          <p>在平面直角坐标系中，一个向量可以写成 (x, y)。x 表示水平走多少，y 表示竖直走多少。</p>
+          <div class="formula">若 A(x1, y1)，B(x2, y2)，则 AB = (x2 - x1, y2 - y1)<br>|a| = √(x² + y²)</div>
+          <p>坐标法的好处是：加减、数乘、长度都能直接算。</p>
+          <table>
+            <tr><th>运算</th><th>坐标规则</th></tr>
+            <tr><td>a + b</td><td>(x1 + x2, y1 + y2)</td></tr>
+            <tr><td>a - b</td><td>(x1 - x2, y1 - y2)</td></tr>
+            <tr><td>ka</td><td>(kx, ky)</td></tr>
+            <tr><td>|a|</td><td>√(x² + y²)</td></tr>
+          </table>
+        </div>
+        <div>
+          <svg viewBox="0 0 420 300" role="img" aria-label="坐标向量">
+            <defs>
+              <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"></path>
+              </marker>
+            </defs>
+            <line x1="45" y1="250" x2="385" y2="250" stroke="#94a3b8" marker-end="url(#arrow3)"></line>
+            <line x1="80" y1="270" x2="80" y2="30" stroke="#94a3b8" marker-end="url(#arrow3)"></line>
+            <g stroke="#e5e7eb">
+              <line x1="140" y1="30" x2="140" y2="250"></line><line x1="200" y1="30" x2="200" y2="250"></line><line x1="260" y1="30" x2="260" y2="250"></line><line x1="320" y1="30" x2="320" y2="250"></line>
+              <line x1="80" y1="190" x2="385" y2="190"></line><line x1="80" y1="130" x2="385" y2="130"></line><line x1="80" y1="70" x2="385" y2="70"></line>
+            </g>
+            <line x1="140" y1="190" x2="320" y2="70" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow3)"></line>
+            <line x1="140" y1="190" x2="320" y2="190" stroke="#0f766e" stroke-dasharray="7 5" stroke-width="2"></line>
+            <line x1="320" y1="190" x2="320" y2="70" stroke="#0f766e" stroke-dasharray="7 5" stroke-width="2"></line>
+            <circle cx="140" cy="190" r="4" fill="#1f2937"></circle>
+            <circle cx="320" cy="70" r="4" fill="#1f2937"></circle>
+            <text x="120" y="214" font-size="16">A(1,1)</text>
+            <text x="290" y="58" font-size="16">B(4,3)</text>
+            <text x="205" y="184" font-size="15" fill="#0f766e">横走 3</text>
+            <text x="326" y="138" font-size="15" fill="#0f766e">竖走 2</text>
+            <text x="188" y="105" font-size="17" fill="#2563eb">AB=(3,2)</text>
+          </svg>
+          <p class="caption">从 A 到 B：横坐标相减得 3，纵坐标相减得 2。</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>例题 3</h3>
+        <p>已知 A(2, -1)，B(-1, 3)，求向量 AB 及它的长度。</p>
+        <div class="answer">
+          <p><strong>解：</strong>AB = (xB - xA, yB - yA) = (-1 - 2, 3 - (-1)) = <strong>(-3, 4)</strong>。</p>
+          <p>|AB| = √[(-3)² + 4²] = √25 = <strong>5</strong>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="batch4">
+      <h2>第四批：数量积，判断角度的核心工具</h2>
+      <div class="grid">
+        <div>
+          <p>数量积也叫点积。它把两个向量变成一个数，用来处理夹角、垂直、投影等问题。</p>
+          <div class="formula">a·b = |a||b|cos θ<br>若 a=(x1,y1)，b=(x2,y2)，则 a·b = x1x2 + y1y2</div>
+          <table>
+            <tr><th>结论</th><th>判断方式</th></tr>
+            <tr><td>a 与 b 垂直</td><td>a·b = 0</td></tr>
+            <tr><td>夹角为锐角</td><td>a·b &gt; 0</td></tr>
+            <tr><td>夹角为钝角</td><td>a·b &lt; 0</td></tr>
+            <tr><td>求夹角</td><td>cos θ = (a·b)/(|a||b|)</td></tr>
+          </table>
+          <div class="wrong">易错点：a·b 是一个数，不是向量；|a·b| 和 |a||b| 不是一回事。</div>
+        </div>
+        <div>
+          <svg viewBox="0 0 420 280" role="img" aria-label="数量积夹角图">
+            <defs>
+              <marker id="arrow4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"></path>
+              </marker>
+              <marker id="arrow4g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#0f766e"></path>
+              </marker>
+            </defs>
+            <line x1="80" y1="210" x2="330" y2="210" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow4)"></line>
+            <line x1="80" y1="210" x2="255" y2="80" stroke="#0f766e" stroke-width="4" marker-end="url(#arrow4g)"></line>
+            <path d="M130 210 A50 50 0 0 0 120 174" fill="none" stroke="#dc2626" stroke-width="3"></path>
+            <text x="136" y="190" font-size="18" fill="#dc2626">θ</text>
+            <line x1="255" y1="80" x2="255" y2="210" stroke="#b45309" stroke-width="2" stroke-dasharray="6 5"></line>
+            <text x="180" y="230" font-size="17" fill="#2563eb">a</text>
+            <text x="155" y="120" font-size="17" fill="#0f766e">b</text>
+            <text x="260" y="150" font-size="15" fill="#b45309">b 在 a 方向上的影子</text>
+            <text x="75" y="238" font-size="15">同起点看夹角</text>
+          </svg>
+        </div>
+      </div>
+      <div class="example">
+        <h3>例题 4</h3>
+        <p>已知 a = (1, 2)，b = (3, -1)，求 a·b，并判断 a 与 b 的夹角是锐角、直角还是钝角。</p>
+        <div class="answer">
+          <p><strong>解：</strong>a·b = 1×3 + 2×(-1) = 3 - 2 = <strong>1</strong>。</p>
+          <p>因为 a·b &gt; 0，所以 cos θ &gt; 0，夹角 θ 为<strong>锐角</strong>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="batch5">
+      <h2>第五批：向量在几何中的常见用法</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">共线</span>
+          <p>若 a = λb，则 a 与 b 共线。坐标中可用 x1y2 - x2y1 = 0 判断。</p>
+        </div>
+        <div class="card">
+          <span class="tag">中点</span>
+          <p>若 M 是 AB 中点，则 M((xA+xB)/2, (yA+yB)/2)。也可写 AM = MB。</p>
+        </div>
+        <div class="card">
+          <span class="tag">垂直</span>
+          <p>两向量垂直的坐标条件：x1x2 + y1y2 = 0。</p>
+        </div>
+        <div class="card">
+          <span class="tag">面积</span>
+          <p>平行四边形面积 = |x1y2 - x2y1|，三角形面积取一半。</p>
+        </div>
+      </div>
+      <div class="grid" style="margin-top:18px">
+        <div>
+          <svg viewBox="0 0 420 280" role="img" aria-label="向量面积图">
+            <defs>
+              <marker id="arrow5" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"></path>
+              </marker>
+              <marker id="arrow5g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#0f766e"></path>
+              </marker>
+            </defs>
+            <polygon points="80,215 250,215 335,95 165,95" fill="#dbeafe" stroke="#2563eb" stroke-width="2"></polygon>
+            <line x1="80" y1="215" x2="250" y2="215" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow5)"></line>
+            <line x1="80" y1="215" x2="165" y2="95" stroke="#0f766e" stroke-width="4" marker-end="url(#arrow5g)"></line>
+            <line x1="165" y1="95" x2="165" y2="215" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 5"></line>
+            <text x="155" y="238" font-size="17" fill="#2563eb">a</text>
+            <text x="96" y="145" font-size="17" fill="#0f766e">b</text>
+            <text x="172" y="160" font-size="15" fill="#dc2626">高</text>
+            <text x="185" y="142" font-size="17">面积与“底 × 高”有关</text>
+          </svg>
+        </div>
+        <div>
+          <div class="example" style="margin-top:0">
+            <h3>例题 5</h3>
+            <p>已知 A(0,0)，B(4,1)，C(1,3)，求三角形 ABC 的面积。</p>
+            <div class="answer">
+              <p><strong>解：</strong>取 AB=(4,1)，AC=(1,3)。</p>
+              <p>平行四边形面积 = |4×3 - 1×1| = |12 - 1| = 11。</p>
+              <p>三角形 ABC 面积是它的一半，所以 S = <strong>11/2</strong>。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="batch6">
+      <h2>第六批：空间向量，立体几何的计算语言</h2>
+      <div class="grid">
+        <div>
+          <p>空间向量就是把平面中的 (x, y) 扩展成 (x, y, z)。它常用于证明线线垂直、线面垂直、求夹角和距离。</p>
+          <div class="formula">a=(x1,y1,z1)，b=(x2,y2,z2)<br>a·b=x1x2+y1y2+z1z2<br>|a|=√(x1²+y1²+z1²)</div>
+          <p><strong>做题流程：</strong></p>
+          <ol class="steps">
+            <li>建立空间直角坐标系，优先把垂直的棱当坐标轴。</li>
+            <li>写出关键点坐标。</li>
+            <li>把线段、法向量转成坐标向量。</li>
+            <li>用数量积处理垂直、夹角、距离。</li>
+          </ol>
+        </div>
+        <div>
+          <svg viewBox="0 0 420 300" role="img" aria-label="空间坐标系与长方体">
+            <defs>
+              <marker id="arrow6" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#1f2937"></path>
+              </marker>
+            </defs>
+            <line x1="115" y1="235" x2="360" y2="235" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow6)"></line>
+            <line x1="115" y1="235" x2="115" y2="40" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow6)"></line>
+            <line x1="115" y1="235" x2="42" y2="275" stroke="#1f2937" stroke-width="2" marker-end="url(#arrow6)"></line>
+            <text x="365" y="240" font-size="16">x</text>
+            <text x="105" y="35" font-size="16">z</text>
+            <text x="28" y="288" font-size="16">y</text>
+            <polygon points="150,210 290,210 335,165 195,165" fill="#e0f2fe" stroke="#2563eb"></polygon>
+            <polygon points="150,120 290,120 335,75 195,75" fill="#f0fdfa" stroke="#0f766e"></polygon>
+            <line x1="150" y1="210" x2="150" y2="120" stroke="#2563eb"></line>
+            <line x1="290" y1="210" x2="290" y2="120" stroke="#2563eb"></line>
+            <line x1="335" y1="165" x2="335" y2="75" stroke="#2563eb"></line>
+            <line x1="195" y1="165" x2="195" y2="75" stroke="#2563eb"></line>
+            <line x1="150" y1="210" x2="335" y2="75" stroke="#dc2626" stroke-width="3"></line>
+            <text x="220" y="132" font-size="16" fill="#dc2626">空间对角线</text>
+          </svg>
+        </div>
+      </div>
+      <div class="example">
+        <h3>例题 6</h3>
+        <p>在空间中，a=(1,2,2)，b=(2,-1,0)。判断 a 与 b 是否垂直。</p>
+        <div class="answer">
+          <p><strong>解：</strong>计算数量积：a·b = 1×2 + 2×(-1) + 2×0 = 2 - 2 + 0 = 0。</p>
+          <p>数量积为 0，所以 <strong>a ⟂ b</strong>。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>最后的复习清单</h2>
+      <table>
+        <tr><th>必须会</th><th>自查问题</th></tr>
+        <tr><td>向量概念</td><td>能不能说清“相等向量”和“相反向量”？</td></tr>
+        <tr><td>线性运算</td><td>会不会画首尾相接、平行四边形法则？</td></tr>
+        <tr><td>坐标表示</td><td>会不会由两点坐标写出向量坐标？</td></tr>
+        <tr><td>数量积</td><td>能不能用 a·b=0 判断垂直，用公式求夹角？</td></tr>
+        <tr><td>综合应用</td><td>会不会用共线、垂直、面积公式解决几何题？</td></tr>
+        <tr><td>空间向量</td><td>能不能建系、写坐标、算数量积？</td></tr>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高中数学知识点学习站</title>
+  <style>
+    :root{
+      --ink:#172033;
+      --muted:#64748b;
+      --line:#d7dee8;
+      --paper:#fffefa;
+      --soft:#f4f7fb;
+      --blue:#2563eb;
+      --green:#0f766e;
+      --amber:#b45309;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:#eef3f7;
+      font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;
+      line-height:1.72;
+    }
+    header{
+      background:linear-gradient(135deg,#123047 0%,#0f766e 58%,#2563eb 100%);
+      color:white;
+      padding:46px 22px 38px;
+    }
+    .wrap{max-width:1120px;margin:auto}
+    h1{margin:0 0 10px;font-size:36px;letter-spacing:0}
+    h2{font-size:24px;margin:0 0 16px}
+    p{margin:8px 0}
+    .subtitle{max-width:820px;color:#e2e8f0;font-size:17px}
+    main{max-width:1120px;margin:24px auto 56px;padding:0 18px}
+    .toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+    .toolbar a{
+      color:white;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.38);
+      background:rgba(255,255,255,.12);
+      border-radius:8px;
+      padding:9px 12px;
+    }
+    .panel{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:22px;
+      box-shadow:0 12px 30px rgba(15,23,42,.07);
+      margin-bottom:20px;
+    }
+    .intro{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:20px;
+      align-items:start;
+    }
+    .mini-list{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:14px 16px;
+    }
+    .mini-list strong{color:var(--green)}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+    }
+    .card{
+      display:flex;
+      flex-direction:column;
+      min-height:230px;
+      background:white;
+      border:1px solid var(--line);
+      border-radius:8px;
+      overflow:hidden;
+      text-decoration:none;
+      color:inherit;
+      transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 26px rgba(15,23,42,.12);
+      border-color:#93c5fd;
+    }
+    .art{
+      height:112px;
+      background:#fbfdff;
+      border-bottom:1px solid var(--line);
+      display:grid;
+      place-items:center;
+      padding:12px;
+    }
+    .art svg{width:100%;height:100%}
+    .card-body{padding:16px}
+    .kicker{
+      display:inline-block;
+      font-size:13px;
+      color:white;
+      background:var(--green);
+      border-radius:999px;
+      padding:2px 10px;
+      margin-bottom:9px;
+    }
+    .card h3{font-size:21px;margin:0 0 8px}
+    .card p{color:var(--muted);margin:0}
+    .status{
+      margin-top:auto;
+      padding:12px 16px;
+      border-top:1px solid var(--line);
+      color:var(--blue);
+      font-weight:bold;
+      background:#f8fafc;
+    }
+    .placeholder{
+      border-style:dashed;
+      background:#fbfdff;
+    }
+    .placeholder .kicker{background:var(--amber)}
+    .footer-note{color:var(--muted);font-size:14px}
+    code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+    @media (max-width:760px){
+      h1{font-size:29px}
+      .intro{grid-template-columns:1fr}
+      .panel{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>高中数学知识点学习站</h1>
+      <p class="subtitle">把高中数学知识按专题整理成可跳转网页。当前已完成“向量”专题，后续可以继续加入函数、三角、数列、立体几何、概率统计等内容。</p>
+      <div class="toolbar">
+        <a href="#knowledge">进入知识点目录</a>
+        <a href="pages/vector-notes.html">向量讲义</a>
+        <a href="pages/vector-test.html">向量检测卷</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel intro">
+      <div>
+        <h2>学习方式</h2>
+        <p>每个专题建议拆成“知识点讲解”和“检测卷”两部分：先通过图形和例题理解概念，再用检测卷确认是否真正掌握。</p>
+        <p>首页只负责做清晰跳转，后面新增知识时，可以继续在目录中添加新的专题卡片。</p>
+      </div>
+      <div class="mini-list">
+        <p><strong>当前专题：</strong>向量</p>
+        <p><strong>适合对象：</strong>高中阶段、新高考数学复习</p>
+        <p><strong>内容结构：</strong>图解知识点 + 例题详解 + 检测卷</p>
+      </div>
+    </section>
+
+    <section id="knowledge" class="panel">
+      <h2>知识点目录</h2>
+      <div class="cards">
+        <a class="card" href="pages/vector-notes.html">
+          <div class="art">
+            <svg viewBox="0 0 360 120" role="img" aria-label="向量图形">
+              <defs>
+                <marker id="arrowA" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                  <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"></path>
+                </marker>
+                <marker id="arrowB" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                  <path d="M0,0 L8,3 L0,6 Z" fill="#0f766e"></path>
+                </marker>
+              </defs>
+              <line x1="46" y1="84" x2="166" y2="42" stroke="#2563eb" stroke-width="5" marker-end="url(#arrowA)"></line>
+              <line x1="166" y1="42" x2="284" y2="82" stroke="#0f766e" stroke-width="5" marker-end="url(#arrowB)"></line>
+              <line x1="46" y1="84" x2="284" y2="82" stroke="#dc2626" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#arrowA)"></line>
+              <text x="92" y="35" font-size="16" fill="#2563eb">a</text>
+              <text x="230" y="48" font-size="16" fill="#0f766e">b</text>
+              <text x="142" y="104" font-size="16" fill="#dc2626">a+b</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="kicker">知识点讲义</span>
+            <h3>向量图解讲义</h3>
+            <p>从概念、线性运算、坐标、数量积到空间向量，配图和例题讲清楚。</p>
+          </div>
+          <div class="status">开始学习</div>
+        </a>
+
+        <a class="card" href="pages/vector-test.html">
+          <div class="art">
+            <svg viewBox="0 0 360 120" role="img" aria-label="检测卷图形">
+              <rect x="78" y="18" width="204" height="84" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="3"></rect>
+              <line x1="106" y1="42" x2="248" y2="42" stroke="#cbd5e1" stroke-width="4"></line>
+              <line x1="106" y1="62" x2="230" y2="62" stroke="#cbd5e1" stroke-width="4"></line>
+              <line x1="106" y1="82" x2="204" y2="82" stroke="#cbd5e1" stroke-width="4"></line>
+              <circle cx="254" cy="80" r="24" fill="#f0fdfa" stroke="#0f766e" stroke-width="4"></circle>
+              <path d="M242 80 L251 89 L269 68" fill="none" stroke="#0f766e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="kicker">检测反馈</span>
+            <h3>向量学习检测卷</h3>
+            <p>100 分制试卷，覆盖选择、填空和解答题，附可展开参考答案。</p>
+          </div>
+          <div class="status">开始检测</div>
+        </a>
+
+        <article class="card placeholder">
+          <div class="art">
+            <svg viewBox="0 0 360 120" role="img" aria-label="新增知识占位">
+              <circle cx="180" cy="60" r="34" fill="#fff7ed" stroke="#b45309" stroke-width="4"></circle>
+              <line x1="180" y1="42" x2="180" y2="78" stroke="#b45309" stroke-width="5" stroke-linecap="round"></line>
+              <line x1="162" y1="60" x2="198" y2="60" stroke="#b45309" stroke-width="5" stroke-linecap="round"></line>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="kicker">后续新增</span>
+            <h3>更多知识点</h3>
+            <p>以后新增专题时，把新的 HTML 放入 <code>pages/</code>，再在这里加一张卡片。</p>
+          </div>
+          <div class="status">预留入口</div>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer-note">维护提示：专题页面统一放在 <code>pages/</code> 文件夹，首页 <code>index.html</code> 只维护目录和跳转。</p>
+  </main>
+</body>
+</html>

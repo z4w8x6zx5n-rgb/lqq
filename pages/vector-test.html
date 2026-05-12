@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高中数学向量学习检测卷</title>
+  <style>
+    :root{
+      --ink:#172033;
+      --muted:#64748b;
+      --line:#d8e0eb;
+      --paper:#fffefa;
+      --soft:#f7fafc;
+      --blue:#2563eb;
+      --green:#0f766e;
+      --red:#dc2626;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:#eef3f7;
+      color:var(--ink);
+      font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;
+      line-height:1.72;
+    }
+    header{
+      background:#123047;
+      color:white;
+      padding:34px 24px;
+      border-bottom:6px solid #0f766e;
+    }
+    .wrap{max-width:1060px;margin:auto}
+    h1{margin:0 0 8px;font-size:34px;letter-spacing:0}
+    h2{font-size:23px;border-bottom:2px solid var(--line);padding-bottom:8px;margin:24px 0 16px}
+    h3{font-size:18px;margin:18px 0 8px}
+    main{max-width:1060px;margin:24px auto 54px;padding:0 18px}
+    .paper{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:24px;
+      box-shadow:0 12px 30px rgba(15,23,42,.07);
+    }
+    .meta{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:10px;
+      margin-top:14px;
+      color:#e2e8f0;
+    }
+    .meta span{border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:5px}
+    .notice{background:#f0fdfa;border-left:5px solid var(--green);padding:10px 12px;border-radius:8px}
+    .q{border-bottom:1px dashed #cbd5e1;padding:14px 0}
+    .q:last-child{border-bottom:0}
+    .score{color:var(--blue);font-weight:bold}
+    .blank{display:inline-block;min-width:90px;border-bottom:1px solid #111;height:1.2em;vertical-align:baseline}
+    .work{min-height:74px;border:1px dashed #cbd5e1;background:white;border-radius:8px;margin-top:8px;padding:8px;color:#94a3b8}
+    .choice{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin-top:6px}
+    .choice span{background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+    svg{width:100%;max-width:420px;height:auto;display:block;background:#fbfdff;border:1px solid var(--line);border-radius:8px;margin:10px 0}
+    details{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:8px;
+      padding:12px 14px;
+      margin:12px 0;
+    }
+    summary{cursor:pointer;font-weight:bold;color:var(--green)}
+    .ans{background:#f8fafc;border-left:4px solid var(--blue);padding:10px 12px;border-radius:6px;margin-top:10px}
+    .rubric{font-size:14px;color:var(--muted)}
+    .page-break{break-before:page}
+    .sitebar{
+      background:#0f172a;
+      color:white;
+      padding:10px 18px;
+    }
+    .sitebar .wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .sitebar a{
+      color:white;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.32);
+      border-radius:8px;
+      padding:5px 10px;
+      background:rgba(255,255,255,.08);
+      font-size:14px;
+    }
+    @media print{
+      body{background:white}
+      header{background:white;color:#111;border-bottom:2px solid #111}
+      .meta{color:#111}
+      .paper{box-shadow:none;border:0}
+      details.answer-key{display:none}
+      main{margin-top:0}
+    }
+  </style>
+</head>
+<body>
+  <div class="sitebar">
+    <div class="wrap">
+      <span>高中数学知识点学习站</span>
+      <div>
+        <a href="../index.html">返回首页</a>
+        <a href="vector-notes.html">进入讲义</a>
+      </div>
+    </div>
+  </div>
+  <header>
+    <div class="wrap">
+      <h1>高中数学向量学习检测卷</h1>
+      <p>满分 100 分，建议用时 60 分钟。题目覆盖概念、坐标运算、数量积、几何应用和空间向量。</p>
+      <div class="meta">
+        <span>姓名：</span>
+        <span>日期：</span>
+        <span>得分：</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="paper">
+      <div class="notice">做题提醒：先画图或写坐标，再套公式；遇到夹角、垂直，优先想到数量积。</div>
+
+      <h2>一、选择题（每题 5 分，共 30 分）</h2>
+      <div class="q">
+        <h3>1. 下列说法正确的是 <span class="score">（5 分）</span></h3>
+        <div class="choice">
+          <span>A. 长度相等的向量一定相等</span>
+          <span>B. 方向相同的向量一定相等</span>
+          <span>C. 长度相等且方向相同的向量相等</span>
+          <span>D. 零向量有唯一方向</span>
+        </div>
+        <p>答案：<span class="blank"></span></p>
+      </div>
+
+      <div class="q">
+        <h3>2. 已知 a=(2,-3)，b=(-1,4)，则 a+b 等于 <span class="score">（5 分）</span></h3>
+        <div class="choice">
+          <span>A. (1,1)</span>
+          <span>B. (3,-7)</span>
+          <span>C. (-2,-12)</span>
+          <span>D. (1,-1)</span>
+        </div>
+        <p>答案：<span class="blank"></span></p>
+      </div>
+
+      <div class="q">
+        <h3>3. 已知 A(1,2)，B(4,-2)，则向量 AB 为 <span class="score">（5 分）</span></h3>
+        <div class="choice">
+          <span>A. (5,0)</span>
+          <span>B. (3,-4)</span>
+          <span>C. (-3,4)</span>
+          <span>D. (4,-2)</span>
+        </div>
+        <p>答案：<span class="blank"></span></p>
+      </div>
+
+      <div class="q">
+        <h3>4. 若 a=(1,2)，b=(2,-1)，则 a 与 b 的关系是 <span class="score">（5 分）</span></h3>
+        <div class="choice">
+          <span>A. 平行</span>
+          <span>B. 垂直</span>
+          <span>C. 相等</span>
+          <span>D. 夹角为 0°</span>
+        </div>
+        <p>答案：<span class="blank"></span></p>
+      </div>
+
+      <div class="q">
+        <h3>5. 若 |a|=3，|b|=4，a 与 b 的夹角为 60°，则 a·b 等于 <span class="score">（5 分）</span></h3>
+        <div class="choice">
+          <span>A. 6</span>
+          <span>B. 7</span>
+          <span>C. 12</span>
+          <span>D. 24</span>
+        </div>
+        <p>答案：<span class="blank"></span></p>
+      </div>
+
+      <div class="q">
+        <h3>6. 已知 a=(2,1)，b=(4,2)，则 a 与 b <span class="score">（5 分）</span></h3>
+        <div class="choice">
+          <span>A. 共线同向</span>
+          <span>B. 共线反向</span>
+          <span>C. 垂直</span>
+          <span>D. 不共线</span>
+        </div>
+        <p>答案：<span class="blank"></span></p>
+      </div>
+
+      <h2>二、填空题（每题 5 分，共 20 分）</h2>
+      <div class="q">
+        <h3>7. 已知 a=(-3,4)，则 |a| = <span class="blank"></span>。<span class="score">（5 分）</span></h3>
+      </div>
+      <div class="q">
+        <h3>8. 已知 a=(x,2)，b=(3,-6)，若 a ⟂ b，则 x = <span class="blank"></span>。<span class="score">（5 分）</span></h3>
+      </div>
+      <div class="q">
+        <h3>9. 点 A(-1,3)，B(5,1) 的中点坐标为 <span class="blank"></span>。<span class="score">（5 分）</span></h3>
+      </div>
+      <div class="q">
+        <h3>10. 空间向量 a=(1,2,-2)，b=(2,1,2)，则 a·b = <span class="blank"></span>。<span class="score">（5 分）</span></h3>
+      </div>
+
+      <h2>三、解答题（共 50 分）</h2>
+      <div class="q">
+        <h3>11. 向量线性运算 <span class="score">（10 分）</span></h3>
+        <p>已知 a=(3,-2)，b=(-1,5)，求 2a-3b。</p>
+        <div class="work">解答过程：</div>
+      </div>
+
+      <div class="q">
+        <h3>12. 由两点求向量与长度 <span class="score">（10 分）</span></h3>
+        <p>已知 A(2,1)，B(-2,4)，求 AB 以及 |AB|。</p>
+        <div class="work">解答过程：</div>
+      </div>
+
+      <div class="q">
+        <h3>13. 数量积与夹角 <span class="score">（10 分）</span></h3>
+        <p>已知 a=(1,√3)，b=(2,0)。求 a 与 b 的夹角。</p>
+        <div class="work">解答过程：</div>
+      </div>
+
+      <div class="q">
+        <h3>14. 三角形面积 <span class="score">（10 分）</span></h3>
+        <p>如图，A(0,0)，B(5,1)，C(2,4)，求三角形 ABC 的面积。</p>
+        <svg viewBox="0 0 420 240" role="img" aria-label="三角形ABC坐标图">
+          <defs>
+            <marker id="axis" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L8,3 L0,6 Z" fill="#172033"></path>
+            </marker>
+          </defs>
+          <line x1="48" y1="200" x2="380" y2="200" stroke="#172033" marker-end="url(#axis)"></line>
+          <line x1="80" y1="218" x2="80" y2="28" stroke="#172033" marker-end="url(#axis)"></line>
+          <polygon points="80,200 330,170 180,80" fill="#dbeafe" stroke="#2563eb" stroke-width="2"></polygon>
+          <circle cx="80" cy="200" r="4" fill="#172033"></circle>
+          <circle cx="330" cy="170" r="4" fill="#172033"></circle>
+          <circle cx="180" cy="80" r="4" fill="#172033"></circle>
+          <text x="64" y="220" font-size="15">A</text>
+          <text x="336" y="170" font-size="15">B</text>
+          <text x="184" y="76" font-size="15">C</text>
+        </svg>
+        <div class="work">解答过程：</div>
+      </div>
+
+      <div class="q">
+        <h3>15. 空间向量垂直证明 <span class="score">（10 分）</span></h3>
+        <p>已知空间向量 u=(1,-2,2)，v=(2,1,0)。判断 u 与 v 是否垂直，并说明理由。</p>
+        <div class="work">解答过程：</div>
+      </div>
+
+      <details class="answer-key page-break">
+        <summary>展开参考答案与评分要点</summary>
+        <div class="ans">
+          <p><strong>1.</strong> C。相等向量要求长度相等且方向相同。</p>
+          <p><strong>2.</strong> A。a+b=(2+(-1), -3+4)=(1,1)。</p>
+          <p><strong>3.</strong> B。AB=(4-1, -2-2)=(3,-4)。</p>
+          <p><strong>4.</strong> B。a·b=1×2+2×(-1)=0，所以垂直。</p>
+          <p><strong>5.</strong> A。a·b=3×4×cos60°=12×1/2=6。</p>
+          <p><strong>6.</strong> A。b=2a，所以共线同向。</p>
+          <p><strong>7.</strong> 5。|a|=√(9+16)=5。</p>
+          <p><strong>8.</strong> 4。a·b=3x+2×(-6)=0，3x-12=0，x=4。</p>
+          <p><strong>9.</strong> (2,2)。中点坐标为 ((-1+5)/2,(3+1)/2)。</p>
+          <p><strong>10.</strong> 0。a·b=1×2+2×1+(-2)×2=0。</p>
+          <p><strong>11.</strong> 2a=(6,-4)，3b=(-3,15)，2a-3b=(6,-4)-(-3,15)=(9,-19)。</p>
+          <p><strong>12.</strong> AB=(-2-2,4-1)=(-4,3)，|AB|=√(16+9)=5。</p>
+          <p><strong>13.</strong> a·b=2，|a|=2，|b|=2，所以 cosθ=2/(2×2)=1/2，θ=60°。</p>
+          <p><strong>14.</strong> AB=(5,1)，AC=(2,4)，平行四边形面积 |5×4-1×2|=18，三角形面积为 9。</p>
+          <p><strong>15.</strong> u·v=1×2+(-2)×1+2×0=0，所以 u 与 v 垂直。</p>
+          <p class="rubric">解答题评分建议：公式和思路 3 分，关键计算 5 分，结果与表述 2 分；若思路正确但算错，可酌情给 5 到 7 分。</p>
+        </div>
+      </details>
+    </div>
+  </main>
+</body>
+</html>
