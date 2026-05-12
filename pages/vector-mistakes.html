@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>向量易错点专项</title>
+  <style>
+    :root{
+      --bg1:#e8f8ed;--bg2:#d4f0db;--paper:#fff;--mint:#f0faf3;
+      --bright:#2dc653;--deep:#1a8f3c;--mid:#5a9e6a;--dark:#0d3d1a;
+      --text:#2a4a30;--gold:#e07000;--blue:#2266aa;--copper:#aa6622;
+      --line:rgba(45,198,83,.15);--badge-bg:rgba(52,199,89,.12);--badge-line:rgba(52,199,89,.38);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);font-family:"SimHei","Microsoft YaHei","PingFang SC",Arial,sans-serif;font-size:16px;line-height:1.78}
+    .sitebar{background:var(--dark);color:white;padding:12px 18px}
+    .sitebar .wrap{max-width:1120px;margin:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+    .sitebar a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.1)}
+    header{background:linear-gradient(135deg,var(--dark),var(--deep) 58%,var(--bright));color:white;padding:38px 22px 32px}
+    .wrap{max-width:1120px;margin:auto}
+    h1{margin:0 0 10px;font-size:34px}
+    h2{font-size:24px;color:var(--dark);border-left:6px solid var(--bright);padding-left:12px;margin:0 0 16px}
+    h3{font-size:19px;color:var(--dark);margin:0 0 8px}
+    p{margin:8px 0}.subtitle{max-width:860px;color:#f0faf3}
+    main{max-width:1120px;margin:24px auto 56px;padding:0 18px}
+    section{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px;margin-bottom:20px;box-shadow:0 12px 30px rgba(13,61,26,.10)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:15px}
+    .badge{display:inline-block;color:var(--deep);background:var(--badge-bg);border:1px solid var(--badge-line);border-radius:999px;padding:2px 10px;font-weight:700;margin-bottom:8px}
+    .wrong{border-left:5px solid var(--gold);background:#fff8ef;padding:10px 12px;border-radius:6px;margin-top:8px}
+    .right{border-left:5px solid var(--deep);background:var(--mint);padding:10px 12px;border-radius:6px;margin-top:8px}
+    .formula{background:#fff;border:1px dashed var(--badge-line);border-radius:8px;padding:10px 12px;font-family:"Consolas","SimHei","Microsoft YaHei",monospace}
+    .home-guide{background:var(--mint);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-top:20px}
+    .home-guide a{color:var(--dark);font-weight:700}
+    table{width:100%;border-collapse:collapse;background:white}th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}th{background:var(--mint);color:var(--dark)}
+    @media (max-width:760px){h1{font-size:29px}section{padding:18px}}
+  </style>
+</head>
+<body>
+  <div class="sitebar">
+    <div class="wrap">
+      <span>当前位置：向量易错点专项</span>
+      <div><a href="../index.html">返回首页</a><a href="vector-notes.html">知识点讲义</a><a href="vector-test.html">试卷测试</a></div>
+    </div>
+  </div>
+  <header>
+    <div class="wrap">
+      <h1>向量易错点专项</h1>
+      <p class="subtitle">这页专门帮你在做题前排雷：哪些地方最容易错、为什么错、正确做法是什么。符号显示不清的地方都用括号说明含义。</p>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>一眼先看：向量最容易错在哪里</h2>
+      <div class="grid">
+        <div class="card"><span class="badge">方向</span><h3>AB 和 BA 写反</h3><p class="wrong">错误：把 AB（向量 AB）写成 A-B。</p><p class="right">正确：AB=终点 B - 起点 A。若 A(x1,y1)，B(x2,y2)，则 AB=(x2-x1,y2-y1)。</p></div>
+        <div class="card"><span class="badge">相等</span><h3>只看长度不看方向</h3><p class="wrong">错误：两条线段一样长，就说向量相等。</p><p class="right">正确：向量相等要同时满足长度相等、方向相同。</p></div>
+        <div class="card"><span class="badge">减法</span><h3>a-b 的箭头画反</h3><p class="wrong">错误：同起点时，从 a 的终点指向 b 的终点。</p><p class="right">正确：同起点时，a-b 是从 b 的终点指向 a 的终点。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>高频公式易错清单</h2>
+      <table>
+        <tr><th>考点</th><th>正确公式</th><th>易错提醒</th></tr>
+        <tr><td>向量长度</td><td>|a|=sqrt(x²+y²)</td><td>sqrt 表示开平方；平方后不保留负号。</td></tr>
+        <tr><td>数量积</td><td>a·b=x1x2+y1y2</td><td>a·b 是数，不是向量。</td></tr>
+        <tr><td>垂直</td><td>a·b=0</td><td>不是两个坐标分别为 0，而是乘积和为 0。</td></tr>
+        <tr><td>夹角</td><td>cosθ=(a·b)/(|a||b|)</td><td>不要漏掉分母 |a||b|。</td></tr>
+        <tr><td>共线</td><td>x1y2-x2y1=0</td><td>共线不一定同向，也不一定相等。</td></tr>
+        <tr><td>三角形面积</td><td>S=1/2 |x1y2-x2y1|</td><td>两个向量要从同一个顶点出发，最后要除以 2。</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>题型里的坑：一步一步避开</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="badge">线性运算</span>
+          <h3>中点和比例题</h3>
+          <p>先选路线，例如 BE=BC+CE；再把每一段换成已知向量。</p>
+          <p class="wrong">常见错法：看到中点只写 1/2，却没有判断方向，导致正负号错。</p>
+        </div>
+        <div class="card">
+          <span class="badge">基本定理</span>
+          <h3>用基底表示向量</h3>
+          <p>先选两个不共线向量作基底，再用两条路径表示同一个向量，最后比较系数。</p>
+          <p class="wrong">常见错法：选了两个共线向量当基底，后面无法唯一表示。</p>
+        </div>
+        <div class="card">
+          <span class="badge">空间向量</span>
+          <h3>角度转换</h3>
+          <p>线线角用方向向量；二面角常用两个面的法向量。</p>
+          <p class="wrong">常见错法：把线面角直接当作直线方向向量和法向量的夹角，忘记二者互余。</p>
+        </div>
+        <div class="card">
+          <span class="badge">圆锥曲线</span>
+          <h3>向量条件代数化</h3>
+          <p>MA·MB=0 表示垂直；MA=λMB 表示共线比例。再联立曲线方程，用韦达定理。</p>
+          <p class="wrong">常见错法：只画图，不把向量条件翻译成坐标关系。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>做题前的 5 秒检查</h2>
+      <div class="formula">1. 这道题问的是长度、方向、夹角、垂直、共线、面积，还是空间角？<br>2. 向量有没有写反？AB 是 B-A。<br>3. 数量积有没有漏乘或漏除 |a||b|？<br>4. 面积有没有从同一个顶点取向量？有没有除以 2？<br>5. 空间题是否需要建系，是否需要法向量？</div>
+      <div class="home-guide">学完本页后，建议回到 <a href="../index.html">首页</a>，进入“试卷测试”做一遍检测；如果解析看不懂，再回到“知识点讲义”补对应模块。</div>
+    </section>
+  </main>
+</body>
+</html>

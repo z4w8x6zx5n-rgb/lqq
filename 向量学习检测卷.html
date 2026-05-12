@@ -1,38 +1,39 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>高中数学向量专项检测卷</title>
   <style>
-    :root{--ink:#172033;--muted:#64748b;--line:#d8e0eb;--paper:#fffefa;--soft:#f7fafc;--blue:#2563eb;--green:#0f766e;--red:#dc2626;--amber:#b45309}
+    :root{--ink:#2a4a30;--muted:#5a9e6a;--line:rgba(45,198,83,.15);--paper:#fff;--soft:#f0faf3;--blue:#2266aa;--green:#1a8f3c;--red:#e07000;--amber:#aa6622}
     *{box-sizing:border-box}
-    body{margin:0;background:#eef3f7;color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;line-height:1.72}
-    .sitebar{background:#0f172a;color:white;padding:10px 18px}
+    body{margin:0;background:linear-gradient(180deg,#e8f8ed,#d4f0db);color:#2a4a30;font-family:"SimHei","Microsoft YaHei","PingFang SC",Arial,sans-serif;font-size:16px;line-height:1.72}
+    .sitebar{background:#0d3d1a;color:white;padding:12px 18px}
     .sitebar .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
-    .sitebar a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.32);border-radius:8px;padding:5px 10px;background:rgba(255,255,255,.08);font-size:14px}
-    header{background:#123047;color:white;padding:34px 24px;border-bottom:6px solid #0f766e}
+    .sitebar a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.1);font-size:14px}
+    header{background:linear-gradient(135deg,#0d3d1a 0%,#1a8f3c 58%,#2dc653 100%);color:white;padding:34px 24px;border-bottom:6px solid #2dc653}
     .wrap{max-width:1080px;margin:auto}
     h1{margin:0 0 8px;font-size:34px;letter-spacing:0}
-    h2{font-size:23px;border-bottom:2px solid var(--line);padding-bottom:8px;margin:24px 0 16px}
+    h2{font-size:23px;border-bottom:2px solid var(--line);padding-bottom:8px;margin:24px 0 16px;color:#0d3d1a}
     h3{font-size:18px;margin:18px 0 8px}
     main{max-width:1080px;margin:24px auto 54px;padding:0 18px}
-    .paper{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:24px;box-shadow:0 12px 30px rgba(15,23,42,.07)}
+    .paper{background:var(--paper);border:1px solid rgba(45,198,83,.15);border-radius:8px;padding:24px;box-shadow:0 12px 30px rgba(13,61,26,.10)}
     .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:14px;color:#e2e8f0}.meta span{border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:5px}
-    .notice{background:#f0fdfa;border-left:5px solid var(--green);padding:10px 12px;border-radius:8px}
+    .notice{background:#f0faf3;border-left:5px solid var(--green);padding:10px 12px;border-radius:8px}
     .q{border-bottom:1px dashed #cbd5e1;padding:14px 0}.q:last-child{border-bottom:0}
     .score{color:var(--blue);font-weight:bold}.blank{display:inline-block;min-width:90px;border-bottom:1px solid #111;height:1.2em;vertical-align:baseline}
     .work{min-height:78px;border:1px dashed #cbd5e1;background:white;border-radius:8px;margin-top:8px;padding:8px;color:#94a3b8}
-    .choice{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:6px;margin-top:6px}.choice span{background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:5px 8px}
-    details{border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px 12px;margin:10px 0}summary{cursor:pointer;font-weight:bold;color:var(--green)}
-    .analysis{background:#f8fafc;border-left:4px solid var(--blue);padding:10px 12px;border-radius:6px;margin-top:10px}
-    .wrong{background:#fef2f2;border-left:4px solid var(--red);padding:8px 10px;border-radius:6px;margin-top:8px}.key{color:var(--green);font-weight:bold}
-    svg{width:100%;max-width:420px;height:auto;display:block;background:#fbfdff;border:1px solid var(--line);border-radius:8px;margin:10px 0}
+    .choice{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:6px;margin-top:6px}.choice span{background:#f0faf3;border:1px solid rgba(45,198,83,.15);border-radius:6px;padding:5px 8px}
+    details{border:1px solid rgba(45,198,83,.15);background:#fff;border-radius:8px;padding:10px 12px;margin:10px 0}summary{cursor:pointer;font-weight:bold;color:var(--green)}
+    .analysis{background:#f0faf3;border-left:4px solid var(--blue);padding:10px 12px;border-radius:6px;margin-top:10px}
+    .wrong{background:#fff8ef;border-left:4px solid var(--red);padding:8px 10px;border-radius:6px;margin-top:8px}.key{color:var(--green);font-weight:bold}
+    svg{width:100%;max-width:420px;height:auto;display:block;background:#fbfdff;border:1px solid rgba(45,198,83,.15);border-radius:8px;margin:10px 0}
+    .home-guide{background:#f0faf3;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-top:20px}.home-guide a{color:#0d3d1a;font-weight:700}
     @media print{body{background:white}.sitebar,details{display:none}header{background:white;color:#111;border-bottom:2px solid #111}.meta{color:#111}.paper{box-shadow:none;border:0}main{margin-top:0}}
   </style>
 </head>
 <body>
-  <div class="sitebar"><div class="wrap"><span>高中数学知识点学习站</span><div><a href="../index.html">返回首页</a><a href="vector-notes.html">进入讲义</a></div></div></div>
+  <div class="sitebar"><div class="wrap"><span>高中数学知识点学习站</span><div><a href="../index.html">返回首页</a><a href="vector-notes.html">进入讲义</a><a href="vector-mistakes.html">易错点</a></div></div></div>
   <header><div class="wrap"><h1>高中数学向量专项检测卷</h1><p>满分 100 分，建议用时 60 分钟。每题下方都有隐藏解析，做完后再展开核对。</p><div class="meta"><span>姓名：</span><span>日期：</span><span>得分：</span></div></div></header>
   <main><div class="paper">
     <div class="notice">符号备注：AB 表示“向量 AB”；|a| 表示“向量 a 的长度”；a·b 表示“a 点乘 b，也叫数量积”；sqrt 表示“开平方”。</div>
@@ -69,6 +70,9 @@
     <div class="q"><h3>14. 三角形面积 <span class="score">（10 分）</span></h3><p>如图，A(0,0)，B(5,1)，C(2,4)，求三角形 ABC 的面积。</p><svg viewBox="0 0 420 240" role="img" aria-label="三角形ABC坐标图"><defs><marker id="axis" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#172033"/></marker></defs><line x1="48" y1="200" x2="380" y2="200" stroke="#172033" marker-end="url(#axis)"/><line x1="80" y1="218" x2="80" y2="28" stroke="#172033" marker-end="url(#axis)"/><polygon points="80,200 330,170 180,80" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><circle cx="80" cy="200" r="4" fill="#172033"/><circle cx="330" cy="170" r="4" fill="#172033"/><circle cx="180" cy="80" r="4" fill="#172033"/><text x="64" y="220" font-size="15">A</text><text x="336" y="170" font-size="15">B</text><text x="184" y="76" font-size="15">C</text></svg><div class="work">解答过程：</div><details><summary>展开解析</summary><div class="analysis"><p><span class="key">答案：9。</span></p><p><strong>知识点：</strong>若 AB=(x1,y1)，AC=(x2,y2)，则三角形面积 S=1/2 |x1y2-x2y1|。</p><p><strong>步骤 1：</strong>从同一顶点 A 出发，AB=(5,1)，AC=(2,4)。</p><p><strong>步骤 2：</strong>|5×4-2×1|=|20-2|=18，这是平行四边形面积。</p><p><strong>步骤 3：</strong>三角形面积是它的一半，S=18/2=9。</p><p class="wrong"><strong>易错点：</strong>最后一定要除以 2；不除以 2 得到的是平行四边形面积。</p></div></details></div>
 
     <div class="q"><h3>15. 空间向量垂直证明 <span class="score">（10 分）</span></h3><p>已知空间向量 u=(1,-2,2)，v=(2,1,0)。判断 u 与 v 是否垂直，并说明理由。</p><div class="work">解答过程：</div><details><summary>展开解析</summary><div class="analysis"><p><span class="key">答案：垂直。</span></p><p><strong>知识点：</strong>空间向量垂直仍用数量积为 0 判断。</p><p><strong>步骤：</strong>u·v=1×2+(-2)×1+2×0=2-2+0=0。</p><p><strong>结论：</strong>因为 u·v=0，所以 u ⟂ v。</p><p class="wrong"><strong>易错点：</strong>“说明理由”不能只写“垂直”，必须写出数量积计算过程。</p></div></details></div>
-  </div></main>
+  <div class="home-guide">返回指引：做完试卷后，请点击顶部或这里的 <a href="../index.html">返回首页</a>，可继续进入“知识点”复习或“易错点”查漏补缺。</div></div></main>
 </body>
 </html>
+
+
+

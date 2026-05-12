@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
@@ -6,45 +6,46 @@
   <title>高中数学向量详细图解讲义</title>
   <style>
     :root{
-      --ink:#172033;--muted:#64748b;--line:#d7dee8;--paper:#fffefa;--soft:#f5f8fc;
-      --blue:#2563eb;--green:#0f766e;--red:#dc2626;--amber:#b45309;--violet:#6d28d9;
+      --ink:#2a4a30;--muted:#5a9e6a;--line:rgba(45,198,83,.15);--paper:#fff;--soft:#f0faf3;
+      --blue:#2266aa;--green:#1a8f3c;--red:#e07000;--amber:#aa6622;--violet:#5a9e6a;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:#eef3f7;color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;line-height:1.78}
-    .sitebar{background:#0f172a;color:white;padding:10px 18px}
+    body{margin:0;background:linear-gradient(180deg,#e8f8ed,#d4f0db);color:#2a4a30;font-family:"SimHei","Microsoft YaHei","PingFang SC",Arial,sans-serif;font-size:16px;line-height:1.78}
+    .sitebar{background:#0d3d1a;color:white;padding:12px 18px}
     .sitebar .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
-    .sitebar a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.32);border-radius:8px;padding:5px 10px;background:rgba(255,255,255,.08);font-size:14px}
-    header{background:linear-gradient(135deg,#123047 0%,#0f766e 58%,#2563eb 100%);color:white;padding:42px 22px 34px}
+    .sitebar a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.1);font-size:14px}
+    header{background:radial-gradient(circle at 12% 18%, rgba(240,250,243,.34), transparent 26%),linear-gradient(135deg,#0d3d1a 0%,#1a8f3c 58%,#2dc653 100%);color:white;padding:42px 22px 34px}
     .wrap{max-width:1160px;margin:auto}
     h1{margin:0 0 10px;font-size:36px;letter-spacing:0}
-    h2{font-size:26px;margin:0 0 18px;border-left:6px solid var(--blue);padding-left:12px}
+    h2{font-size:26px;margin:0 0 18px;border-left:6px solid #2dc653;padding-left:12px;color:#0d3d1a}
     h3{font-size:20px;margin:20px 0 10px}
     p{margin:8px 0}
     .subtitle{max-width:880px;color:#e2e8f0;font-size:17px}
     .nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:24px}
-    .nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:9px 12px;background:rgba(255,255,255,.11)}
+    .nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 12px;background:rgba(255,255,255,.11)}
     main{padding:28px 18px 56px}
-    section{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:24px;margin:0 auto 22px;max-width:1160px;box-shadow:0 10px 28px rgba(15,23,42,.06)}
+    section{background:var(--paper);border:1px solid rgba(45,198,83,.15);border-radius:8px;padding:24px;margin:0 auto 22px;max-width:1160px;box-shadow:0 12px 30px rgba(13,61,26,.10)}
     .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-    .card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:14px}
-    .tag{display:inline-block;font-size:13px;color:white;background:var(--green);border-radius:999px;padding:2px 10px;margin-bottom:8px}
-    .formula{background:#f8fafc;border:1px dashed #b6c2d2;border-radius:8px;padding:12px 14px;font-family:"Consolas","Microsoft YaHei",monospace;overflow:auto}
+    .card{border:1px solid rgba(45,198,83,.15);border-radius:8px;background:#fff;padding:14px}
+    .tag{display:inline-block;font-size:14px;color:#1a8f3c;background:rgba(52,199,89,.12);border:1px solid rgba(52,199,89,.38);border-radius:999px;padding:2px 10px;margin-bottom:8px;font-weight:700}
+    .formula{background:#fff;border:1px dashed rgba(52,199,89,.38);border-radius:8px;padding:12px 14px;font-family:"Consolas","SimHei","Microsoft YaHei",monospace;overflow:auto}
     .note{border-left:4px solid var(--amber);background:#fff7ed;padding:10px 12px;border-radius:6px}
-    .tip{border-left:4px solid var(--green);background:#f0fdfa;padding:10px 12px;border-radius:6px}
+    .tip{border-left:4px solid var(--green);background:#f0faf3;padding:10px 12px;border-radius:6px}
     .wrong{border-left:5px solid var(--red);background:#fef2f2;padding:10px 12px;border-radius:8px;margin-top:10px}
-    .example{border-left:5px solid var(--blue);background:#f8fbff;padding:14px 16px;border-radius:8px;margin-top:14px}
-    .answer{border-left:5px solid var(--green);background:#f0fdfa;padding:12px 16px;border-radius:8px;margin-top:10px}
-    .path{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:10px}
+    .example{border-left:5px solid var(--blue);background:#f6fbff;padding:14px 16px;border-radius:8px;margin-top:14px}
+    .answer{border-left:5px solid var(--green);background:#f0faf3;padding:12px 16px;border-radius:8px;margin-top:10px}
+    .path{background:#fff;border:1px solid rgba(45,198,83,.15);border-radius:8px;padding:12px;margin-top:10px}
     .path ol{margin:6px 0 0 22px;padding:0}
-    svg{width:100%;height:auto;display:block;background:#fbfdff;border:1px solid var(--line);border-radius:8px}
+    svg{width:100%;height:auto;display:block;background:#fbfdff;border:1px solid rgba(45,198,83,.15);border-radius:8px}
     .caption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
     table{width:100%;border-collapse:collapse;margin-top:10px;background:white}
-    th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
-    th{background:#edf2f7}
-    code{background:#eef2ff;padding:1px 5px;border-radius:5px}
+    th,td{border:1px solid rgba(45,198,83,.15);padding:9px 10px;text-align:left;vertical-align:top}
+    th{background:#f0faf3;color:#0d3d1a}
+    code{background:#f0faf3;padding:1px 5px;border-radius:5px;color:#0d3d1a}
     .small{font-size:14px;color:var(--muted)}
-    .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin:2px;background:#fff}
+    .pill{display:inline-block;border:1px solid rgba(45,198,83,.15);border-radius:999px;padding:2px 9px;margin:2px;background:#fff}
+    .home-guide{background:#f0faf3;border:1px solid rgba(45,198,83,.15);border-radius:8px;padding:14px 16px;margin-top:20px}.home-guide a{color:#0d3d1a;font-weight:700}
     @media (max-width:820px){h1{font-size:29px}.grid{grid-template-columns:1fr}section{padding:18px}}
     @media print{body{background:white}.sitebar,.nav{display:none}header{background:white;color:#111;border-bottom:2px solid #111}.subtitle{color:#333}section{box-shadow:none;break-inside:avoid}}
   </style>
@@ -53,7 +54,7 @@
   <div class="sitebar">
     <div class="wrap">
       <span>高中数学知识点学习站</span>
-      <div><a href="../index.html">返回首页</a><a href="vector-test.html">进入检测卷</a></div>
+      <div><a href="../index.html">返回首页</a><a href="vector-mistakes.html">易错点</a><a href="vector-test.html">进入检测卷</a></div>
     </div>
   </div>
   <header>
@@ -296,6 +297,10 @@
         <tr><td>空间向量</td><td>建系、法向量、角和距离</td><td>线面角和法向量夹角混淆。</td></tr>
       </table>
     </section>
+  <section><div class="home-guide">返回指引：如果想切换学习内容，请点击顶部或这里的 <a href="../index.html">返回首页</a>，首页按“知识点、易错点、试卷测试”分块。</div></section>
   </main>
 </body>
 </html>
+
+
+
