@@ -149,12 +149,13 @@
   <header>
     <div class="wrap">
       <h1>高中数学知识点学习站</h1>
-      <p class="subtitle">把高中数学知识按专题整理成可跳转网页。当前向量专题已拆成知识点、易错点、试卷测试三条学习路径，后续新增知识也会继续放在首页分块入口中。</p>
+      <p class="subtitle">把高中数学知识按专题整理成可跳转网页。当前已整理向量、空间几何、解三角形专题，按知识点、易错点、试卷测试三条学习路径推进。</p>
       <div class="cheer">刘启权，你是最聪明的孩子，加油！今天多懂一个知识点，明天做题就少怕一点。</div>
       <div class="toolbar">
         <a href="#knowledge">知识点</a>
         <a href="#mistakes">易错点</a>
         <a href="#test">试卷测试</a>
+        <a href="#triangle">解三角形</a>
       </div>
     </div>
   </header>
@@ -167,7 +168,7 @@
         <p>后面新增函数、三角、数列、立体几何等内容时，也会继续按这三类入口组织，打开首页就能找到。</p>
       </div>
       <div class="mini-list">
-        <p><strong>当前专题：</strong>向量</p>
+        <p><strong>当前专题：</strong>向量、空间几何、解三角形</p>
         <p><strong>适合对象：</strong>高中阶段、新高考数学复习</p>
         <p><strong>页面结构：</strong>知识点讲义 + 易错点归纳 + 隐藏解析试卷</p>
       </div>
@@ -218,6 +219,28 @@
           </div>
           <div class="status">进入斜二测画法</div>
         </a>
+
+        <a id="triangle" class="card" href="pages/triangle-geometry-notes.html">
+          <div class="art">
+            <svg viewBox="0 0 360 120" role="img" aria-label="解三角形知识点图形">
+              <polygon points="62,92 294,92 164,24" fill="#f0faf3" stroke="#0d3d1a" stroke-width="4"></polygon>
+              <line x1="164" y1="24" x2="164" y2="92" stroke="#1a8f3c" stroke-width="4" stroke-dasharray="7 5"></line>
+              <path d="M92 92 A30 30 0 0 0 82 68" fill="none" stroke="#e07000" stroke-width="3"></path>
+              <path d="M262 92 A32 32 0 0 1 274 64" fill="none" stroke="#e07000" stroke-width="3"></path>
+              <text x="154" y="20" font-size="15" fill="#0d3d1a">A</text>
+              <text x="46" y="108" font-size="15" fill="#0d3d1a">B</text>
+              <text x="300" y="108" font-size="15" fill="#0d3d1a">C</text>
+              <text x="171" y="64" font-size="15" fill="#1a8f3c">h</text>
+              <text x="148" y="111" font-size="15" fill="#2266aa">a / sinA</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="kicker">解三角形</span>
+            <h3>三角形几何图解讲义</h3>
+            <p>讲清正弦定理、余弦定理、面积周长、中线、角平分线、高线、最值和多三角形题型。</p>
+          </div>
+          <div class="status">进入解三角形讲义</div>
+        </a>
       </div>
     </section>
 
@@ -239,6 +262,25 @@
             <p>集中整理符号、方向、坐标、数量积、面积、空间向量和圆锥曲线向量的常见误区。</p>
           </div>
           <div class="status">进入易错点归纳</div>
+        </a>
+
+        <a class="card" href="pages/triangle-geometry-notes.html#mistakes">
+          <div class="art">
+            <svg viewBox="0 0 360 120" role="img" aria-label="解三角形易错点图形">
+              <polygon points="72,90 292,90 184,24" fill="#fff7ed" stroke="#e07000" stroke-width="4"></polygon>
+              <line x1="184" y1="24" x2="184" y2="90" stroke="#1a8f3c" stroke-width="4" stroke-dasharray="7 5"></line>
+              <circle cx="184" cy="63" r="24" fill="#fff" stroke="#e07000" stroke-width="4"></circle>
+              <line x1="184" y1="48" x2="184" y2="66" stroke="#e07000" stroke-width="5" stroke-linecap="round"></line>
+              <circle cx="184" cy="76" r="4" fill="#e07000"></circle>
+              <text x="104" y="108" font-size="15" fill="#0d3d1a">边角对应别写反</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="kicker">解三角形易错</span>
+            <h3>三角形几何易错点</h3>
+            <p>集中看边角对应、SSA 两解、面积夹角、半周长、角平分线和高线位置等常见坑。</p>
+          </div>
+          <div class="status">进入解三角形易错点</div>
         </a>
       </div>
     </section>
@@ -263,6 +305,24 @@
             <p>100 分制试卷，每一题都带隐藏解析、知识点说明、步骤拆解和易错提醒。</p>
           </div>
           <div class="status">进入试卷测试</div>
+        </a>
+
+        <a class="card" href="pages/triangle-geometry-test.html">
+          <div class="art">
+            <svg viewBox="0 0 360 120" role="img" aria-label="解三角形检测卷图形">
+              <rect x="74" y="16" width="212" height="88" rx="6" fill="#ffffff" stroke="#2266aa" stroke-width="3"></rect>
+              <polygon points="116,82 204,82 158,38" fill="#f0faf3" stroke="#1a8f3c" stroke-width="3"></polygon>
+              <line x1="158" y1="38" x2="158" y2="82" stroke="#e07000" stroke-width="3" stroke-dasharray="5 4"></line>
+              <path d="M226 73 L237 84 L258 57" fill="none" stroke="#1a8f3c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <text x="106" y="100" font-size="14" fill="#2266aa">100 分检测</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="kicker">检测反馈</span>
+            <h3>解三角形专项检测卷</h3>
+            <p>100 分制试卷，覆盖正弦定理、余弦定理、面积、中线、角平分线和两解问题。</p>
+          </div>
+          <div class="status">进入解三角形检测卷</div>
         </a>
       </div>
     </section>

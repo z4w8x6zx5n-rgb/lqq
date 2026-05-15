@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高中数学解三角形图解讲义</title>
+  <style>
+    :root{
+      --ink:#263d31;--muted:#5d7868;--line:rgba(31,125,79,.17);--paper:#fff;--soft:#f1faf4;
+      --deep:#0d3d1a;--green:#1a8f3c;--bright:#2dc653;--blue:#225ea8;--red:#d55c22;--amber:#a86618;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#e8f8ed,#d4f0db);color:var(--ink);font-family:"SimHei","Microsoft YaHei","PingFang SC",Arial,sans-serif;font-size:16px;line-height:1.78}
+    .sitebar{background:#0d3d1a;color:white;padding:12px 18px}
+    .sitebar .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+    .sitebar a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:6px 12px;background:rgba(255,255,255,.1);font-size:14px}
+    header{background:radial-gradient(circle at 12% 18%, rgba(240,250,243,.34), transparent 26%),linear-gradient(135deg,#0d3d1a 0%,#1a8f3c 58%,#2dc653 100%);color:white;padding:42px 22px 34px}
+    .wrap{max-width:1160px;margin:auto}
+    h1{margin:0 0 10px;font-size:36px;letter-spacing:0}
+    h2{font-size:26px;margin:0 0 18px;border-left:6px solid #2dc653;padding-left:12px;color:#0d3d1a}
+    h3{font-size:20px;margin:18px 0 10px;color:#0d3d1a}
+    p{margin:8px 0}
+    .subtitle{max-width:900px;color:#f0faf3;font-size:17px}
+    .nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:24px}
+    .nav a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 12px;background:rgba(255,255,255,.11)}
+    main{padding:28px 18px 56px}
+    section{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:24px;margin:0 auto 22px;max-width:1160px;box-shadow:0 12px 30px rgba(13,61,26,.10)}
+    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:start}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .card{border:1px solid var(--line);border-radius:8px;background:#fff;padding:14px}
+    .tag{display:inline-block;font-size:14px;color:#1a8f3c;background:rgba(52,199,89,.12);border:1px solid rgba(52,199,89,.38);border-radius:999px;padding:2px 10px;margin-bottom:8px;font-weight:700}
+    .formula{background:#fff;border:1px dashed rgba(52,199,89,.45);border-radius:8px;padding:12px 14px;font-family:"Consolas","SimHei","Microsoft YaHei",monospace;overflow:auto}
+    .note{border-left:4px solid var(--amber);background:#fff7ed;padding:10px 12px;border-radius:6px;margin-top:10px}
+    .tip{border-left:4px solid var(--green);background:#f0faf3;padding:10px 12px;border-radius:6px;margin-top:10px}
+    .wrong{border-left:5px solid var(--red);background:#fff3ed;padding:10px 12px;border-radius:8px;margin-top:10px}
+    .example{border-left:5px solid var(--blue);background:#f6fbff;padding:14px 16px;border-radius:8px;margin-top:14px}
+    .answer{border-left:5px solid var(--green);background:#f0faf3;padding:12px 16px;border-radius:8px;margin-top:10px}
+    .path{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:10px}
+    .path ol{margin:6px 0 0 22px;padding:0}
+    svg{width:100%;height:auto;display:block;background:#fbfdff;border:1px solid var(--line);border-radius:8px}
+    .caption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
+    table{width:100%;border-collapse:collapse;margin-top:10px;background:white}
+    th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+    th{background:#f0faf3;color:#0d3d1a}
+    code{background:#f0faf3;padding:1px 5px;border-radius:5px;color:#0d3d1a}
+    .small{font-size:14px;color:var(--muted)}
+    .home-guide{background:#f0faf3;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-top:20px}.home-guide a{color:#0d3d1a;font-weight:700}
+    @media (max-width:820px){h1{font-size:29px}.grid{grid-template-columns:1fr}section{padding:18px}}
+    @media print{body{background:white}.sitebar,.nav{display:none}header{background:white;color:#111;border-bottom:2px solid #111}.subtitle{color:#333}section{box-shadow:none;break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <div class="sitebar">
+    <div class="wrap">
+      <span>高中数学知识点学习站</span>
+      <div><a href="../index.html">返回首页</a><a href="#mistakes">易错点</a><a href="triangle-geometry-test.html">进入检测卷</a></div>
+    </div>
+  </div>
+  <header>
+    <div class="wrap">
+      <h1>高中数学解三角形图解讲义</h1>
+      <p class="subtitle">本页按文件夹内“解三角形”专项训练整理成第一批知识点：正弦定理、余弦定理、面积与周长、中线、角平分线、高线、最值范围和多三角形拼接。遇到网页符号不稳定的地方，都用括号文字补充含义。</p>
+      <nav class="nav">
+        <a href="#symbols">符号说明</a><a href="#map">知识地图</a><a href="#laws">正余弦定理</a><a href="#area">面积周长</a>
+        <a href="#lines">三条重要线</a><a href="#types">题型分析</a><a href="#examples">详细例题</a><a href="#mistakes">易错点</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="symbols">
+      <h2>先把符号说清楚</h2>
+      <p>在三角形 ABC 中，角 A、B、C 的对边分别记为 a、b、c。也就是说，a 是 BC 的长度，b 是 CA 的长度，c 是 AB 的长度。</p>
+      <table>
+        <tr><th>写法</th><th>含义</th><th>通俗理解</th></tr>
+        <tr><td>sinA（A 的正弦）</td><td>角 A 的正弦值</td><td>和“对边/斜边”的比例有关</td></tr>
+        <tr><td>cosA（A 的余弦）</td><td>角 A 的余弦值</td><td>判断角大角小、用余弦定理求边</td></tr>
+        <tr><td>S</td><td>三角形面积</td><td>常用 1/2×两边×夹角正弦</td></tr>
+        <tr><td>R</td><td>外接圆半径</td><td>正弦定理里的半径</td></tr>
+        <tr><td>r</td><td>内切圆半径</td><td>面积公式 S=rs 中的半径</td></tr>
+        <tr><td>s</td><td>半周长</td><td>s=(a+b+c)/2</td></tr>
+      </table>
+      <div class="tip">一句话主线：已知“角和对边”常用正弦定理；已知“两边夹角”或“三边”常用余弦定理；问面积、周长、最值时，要先把面积或周长写成边角关系。</div>
+    </section>
+
+    <section id="map">
+      <h2>一、知识地图：解三角形到底在解什么</h2>
+      <div class="grid">
+        <div>
+          <p>所谓“解三角形”，就是根据已知边角条件，求出未知边、未知角、面积、周长或某条特殊线段。它不是死背公式，而是先判断题目属于哪一种入口。</p>
+          <div class="cards">
+            <div class="card"><span class="tag">边角互化</span><p>把边换成正弦，把角换成边，核心是正弦定理和余弦定理。</p></div>
+            <div class="card"><span class="tag">面积周长</span><p>用 S=1/2bc sinA、海伦公式、S=rs 或 S=abc/(4R) 建关系。</p></div>
+            <div class="card"><span class="tag">几何线</span><p>中线、角平分线、高线本质都是把大三角形拆成小三角形。</p></div>
+            <div class="card"><span class="tag">最值范围</span><p>把目标写成 sin、cos、二次式或基本不等式能处理的形式。</p></div>
+          </div>
+        </div>
+        <div>
+          <svg viewBox="0 0 440 300" aria-label="三角形符号说明图">
+            <defs>
+              <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1a8f3c"/></marker>
+            </defs>
+            <polygon points="90,238 354,238 190,58" fill="#f0faf3" stroke="#0d3d1a" stroke-width="4"/>
+            <circle cx="90" cy="238" r="5" fill="#0d3d1a"/><circle cx="354" cy="238" r="5" fill="#0d3d1a"/><circle cx="190" cy="58" r="5" fill="#0d3d1a"/>
+            <text x="66" y="260" font-size="18">B</text><text x="362" y="260" font-size="18">C</text><text x="188" y="43" font-size="18">A</text>
+            <text x="214" y="252" fill="#225ea8" font-size="18">a=BC</text><text x="270" y="143" fill="#225ea8" font-size="18">b=CA</text><text x="105" y="140" fill="#225ea8" font-size="18">c=AB</text>
+            <path d="M120 235 A32 32 0 0 0 108 212" fill="none" stroke="#d55c22" stroke-width="3"/><text x="126" y="218" fill="#d55c22" font-size="16">B</text>
+            <path d="M323 238 A36 36 0 0 1 334 204" fill="none" stroke="#d55c22" stroke-width="3"/><text x="306" y="218" fill="#d55c22" font-size="16">C</text>
+            <path d="M176 82 A30 30 0 0 0 205 80" fill="none" stroke="#d55c22" stroke-width="3"/><text x="196" y="98" fill="#d55c22" font-size="16">A</text>
+            <line x1="190" y1="58" x2="190" y2="238" stroke="#1a8f3c" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#arr)"/>
+            <text x="198" y="157" fill="#1a8f3c" font-size="15">高线 h</text>
+          </svg>
+          <p class="caption">先认清“角 A 对边 a”，很多错题都是边角对应写反造成的。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="laws">
+      <h2>二、正弦定理和余弦定理</h2>
+      <div class="grid">
+        <div>
+          <h3>1. 正弦定理：一组“对边/对角”可以互相换</h3>
+          <div class="formula">a/sinA = b/sinB = c/sinC = 2R。<br>括号备注：R 是外接圆半径，2R 是外接圆直径。</div>
+          <p>适合：已知一边及其对角，再知道另一个边或角；或者题目中出现 a/sinA、sinA/a、外接圆半径。</p>
+          <h3>2. 余弦定理：已知三边或两边夹角时最稳</h3>
+          <div class="formula">a² = b² + c² - 2bc cosA。<br>同理：b² = a² + c² - 2ac cosB，c² = a² + b² - 2ab cosC。</div>
+          <p>适合：已知两边和夹角求第三边；已知三边求角；判断锐角、直角、钝角。</p>
+        </div>
+        <div>
+          <svg viewBox="0 0 440 280" aria-label="正弦定理和余弦定理图">
+            <circle cx="220" cy="146" r="105" fill="none" stroke="#cdebd6" stroke-width="4"/>
+            <polygon points="118,170 315,212 238,48" fill="#fff" stroke="#0d3d1a" stroke-width="4"/>
+            <line x1="118" y1="170" x2="315" y2="212" stroke="#225ea8" stroke-width="5"/>
+            <text x="206" y="207" fill="#225ea8" font-size="18">a</text>
+            <text x="276" y="121" fill="#225ea8" font-size="18">b</text>
+            <text x="158" y="104" fill="#225ea8" font-size="18">c</text>
+            <text x="234" y="38" font-size="18">A</text><text x="94" y="176" font-size="18">B</text><text x="322" y="225" font-size="18">C</text>
+            <line x1="220" y1="146" x2="325" y2="146" stroke="#d55c22" stroke-width="3"/>
+            <text x="250" y="138" fill="#d55c22" font-size="16">R</text>
+          </svg>
+          <p class="caption">正弦定理把三角形放到外接圆里看；余弦定理像“带夹角修正的勾股定理”。</p>
+        </div>
+      </div>
+      <div class="wrong"><strong>易错点：</strong>正弦定理里必须是“边和它的对角”配对，例如 a 对 A，不能把 a 和 B 放在一起。余弦定理中 a² 的夹角是 A，A 两边应是 b 和 c。</div>
+    </section>
+
+    <section id="area">
+      <h2>三、面积、周长和半径公式</h2>
+      <table>
+        <tr><th>公式</th><th>什么时候用</th><th>备注</th></tr>
+        <tr><td>S=1/2 bc sinA</td><td>已知两边及夹角</td><td>也有 S=1/2 ca sinB，S=1/2 ab sinC。</td></tr>
+        <tr><td>S=sqrt[s(s-a)(s-b)(s-c)]</td><td>已知三边</td><td>sqrt 表示开平方，s 是半周长。</td></tr>
+        <tr><td>S=rs</td><td>涉及内切圆半径 r</td><td>r=S/s，常用于求内切圆半径。</td></tr>
+        <tr><td>S=abc/(4R)</td><td>涉及外接圆半径 R</td><td>R=abc/(4S)。</td></tr>
+      </table>
+      <div class="tip">最值题常用：两边固定时，S=1/2ab sinC，所以面积最大在夹角 C=90° 时取得；如果边不固定，要先找约束关系。</div>
+    </section>
+
+    <section id="lines">
+      <h2>四、中线、角平分线、高线</h2>
+      <div class="grid">
+        <div>
+          <h3>1. 中线</h3>
+          <p>中线是从顶点连到对边中点的线段。若 m_a 表示从 A 到 BC 中点的中线长度：</p>
+          <div class="formula">m_a = 1/2 sqrt(2b² + 2c² - a²)。</div>
+          <h3>2. 角平分线</h3>
+          <p>角平分线把一个角分成相等的两半。若 AD 是角 A 的角平分线，D 在 BC 上：</p>
+          <div class="formula">BD/DC = AB/AC = c/b。<br>括号备注：角平分线分对边，按邻边长度成比例。</div>
+          <h3>3. 高线</h3>
+          <p>高线是从顶点向对边或对边延长线作垂线。常和面积连用：</p>
+          <div class="formula">S = 1/2 × 底 × 高。<br>例如以 BC 为底，S=1/2 a h_a。</div>
+        </div>
+        <div>
+          <svg viewBox="0 0 440 320" aria-label="中线角平分线高线">
+            <polygon points="76,260 362,260 200,54" fill="#fff" stroke="#0d3d1a" stroke-width="4"/>
+            <line x1="200" y1="54" x2="219" y2="260" stroke="#225ea8" stroke-width="4"/>
+            <line x1="200" y1="54" x2="160" y2="260" stroke="#1a8f3c" stroke-width="4" stroke-dasharray="7 5"/>
+            <line x1="200" y1="54" x2="260" y2="260" stroke="#d55c22" stroke-width="4" stroke-dasharray="4 5"/>
+            <path d="M160 260 L160 238 L181 238" fill="none" stroke="#1a8f3c" stroke-width="3"/>
+            <circle cx="219" cy="260" r="5" fill="#225ea8"/><text x="210" y="283" fill="#225ea8" font-size="16">M 中点</text>
+            <text x="224" y="153" fill="#225ea8" font-size="16">中线</text>
+            <text x="122" y="193" fill="#1a8f3c" font-size="16">高线</text>
+            <text x="263" y="184" fill="#d55c22" font-size="16">角平分线</text>
+            <text x="52" y="282" font-size="18">B</text><text x="368" y="282" font-size="18">C</text><text x="196" y="42" font-size="18">A</text>
+          </svg>
+          <p class="caption">三条线经常一起考：先看它“分边、分角、垂直”中的哪一个性质。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="types">
+      <h2>五、常见题型分析和解题思路</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">题型 1：边角互化</span>
+          <p><strong>信号：</strong>题目含 sinA、cosA、a、b、c 混在一起。</p>
+          <p><strong>思路：</strong>用正弦定理把边统一成 sin，或用余弦定理把 cos 变成三边关系。</p>
+        </div>
+        <div class="card">
+          <span class="tag">题型 2：面积周长</span>
+          <p><strong>信号：</strong>问 S、周长、内切圆、外接圆。</p>
+          <p><strong>思路：</strong>先选公式，再把未知量减少。两边夹角用 1/2ab sinC，三边用海伦公式。</p>
+        </div>
+        <div class="card">
+          <span class="tag">题型 3：中线角平分线高线</span>
+          <p><strong>信号：</strong>出现中点、角平分、垂直。</p>
+          <p><strong>思路：</strong>中线用中线长公式或拆成两个小三角形；角平分线先用比例；高线先想到面积。</p>
+        </div>
+        <div class="card">
+          <span class="tag">题型 4：最值范围</span>
+          <p><strong>信号：</strong>问最大值、最小值、范围。</p>
+          <p><strong>思路：</strong>把目标写成 sin、cos 或一元函数。固定两边求面积最大，先看夹角是否能到 90°。</p>
+        </div>
+        <div class="card">
+          <span class="tag">题型 5：解多三角形</span>
+          <p><strong>信号：</strong>图中两个或多个三角形共边、共角。</p>
+          <p><strong>思路：</strong>先在信息最多的小三角形里求出公共边或公共角，再传给下一个三角形。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples">
+      <h2>六、例题一步一步走</h2>
+      <div class="example">
+        <h3>例 1：两边夹角求第三边和面积</h3>
+        <p>在三角形 ABC 中，b=6，c=8，A=60°，求 a 和面积 S。</p>
+        <div class="answer">
+          <p><strong>第一步：看条件。</strong>b、c 是角 A 的两边，已知两边夹角，优先用余弦定理。</p>
+          <p><strong>第二步：求 a。</strong>a²=b²+c²-2bc cosA=6²+8²-2×6×8×cos60°=36+64-48=52，所以 a=2sqrt(13)。</p>
+          <p><strong>第三步：求面积。</strong>S=1/2bc sinA=1/2×6×8×sin60°=24×sqrt(3)/2=12sqrt(3)。</p>
+          <p class="small">sqrt(13) 表示根号 13。</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>例 2：一边一对角求另一边</h3>
+        <p>在三角形 ABC 中，a=6，A=30°，B=45°，求 b。</p>
+        <div class="answer">
+          <p><strong>第一步：有一组对边对角 a 与 A。</strong>用正弦定理。</p>
+          <p><strong>第二步：列式。</strong>a/sinA=b/sinB，所以 b=a sinB/sinA。</p>
+          <p><strong>第三步：代入。</strong>b=6×sin45°/sin30°=6×(sqrt(2)/2)/(1/2)=6sqrt(2)。</p>
+          <p class="small">注意不是 b=6×sin30°/sin45°，边和角的位置不能倒。</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>例 3：三边求面积和内切圆半径</h3>
+        <p>三角形三边为 13、14、15，求面积 S 和内切圆半径 r。</p>
+        <div class="answer">
+          <p><strong>第一步：三边已知，用海伦公式。</strong>s=(13+14+15)/2=21。</p>
+          <p><strong>第二步：求面积。</strong>S=sqrt[21×(21-13)×(21-14)×(21-15)]=sqrt(21×8×7×6)=sqrt(7056)=84。</p>
+          <p><strong>第三步：用 S=rs。</strong>r=S/s=84/21=4。</p>
+          <p class="small">易错提醒：s 是半周长，不是周长。</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>例 4：角平分线分边</h3>
+        <p>在三角形 ABC 中，AD 平分角 A，D 在 BC 上，AB=6，AC=9，BC=10，求 BD 和 DC。</p>
+        <div class="answer">
+          <p><strong>第一步：抓住角平分线性质。</strong>BD/DC=AB/AC=6/9=2/3。</p>
+          <p><strong>第二步：设比例。</strong>BD=2x，DC=3x，则 BC=5x=10。</p>
+          <p><strong>第三步：解出。</strong>x=2，所以 BD=4，DC=6。</p>
+          <p class="small">角平分线分的是对边，不是把对边平均分。</p>
+        </div>
+      </div>
+      <div class="example">
+        <h3>例 5：两边固定时面积最大</h3>
+        <p>三角形有两边长为 5 和 7，求它面积的最大值。</p>
+        <div class="answer">
+          <p><strong>第一步：设这两边夹角为 θ。</strong>S=1/2×5×7×sinθ=35/2 sinθ。</p>
+          <p><strong>第二步：看 sinθ 的范围。</strong>0&lt;θ&lt;180°，所以 0&lt;sinθ≤1。</p>
+          <p><strong>第三步：取最大。</strong>当 θ=90° 时，sinθ=1，S 最大为 35/2。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <h2>七、易错点和注意事项</h2>
+      <div class="cards">
+        <div class="card"><span class="tag">边角对应错</span><p>a 对 A、b 对 B、c 对 C。正弦定理和余弦定理都不能乱配。</p></div>
+        <div class="card"><span class="tag">SSA 不唯一</span><p>已知两边和其中一边的对角，可能没有三角形、一个三角形或两个三角形，要检查 sin 值和角度。</p></div>
+        <div class="card"><span class="tag">面积公式选错夹角</span><p>S=1/2ab sinC 中，C 必须是 a、b 两边的夹角。</p></div>
+        <div class="card"><span class="tag">半周长忘除以 2</span><p>海伦公式里的 s=(a+b+c)/2，S=rs 里的 s 也是半周长。</p></div>
+        <div class="card"><span class="tag">角平分线当中线</span><p>角平分线一般不平分对边，只有邻边相等的等腰三角形才会同时是中线。</p></div>
+        <div class="card"><span class="tag">钝角三角形高在线外</span><p>钝角三角形的某些高落在对边延长线上，画图时不要强行画在内部。</p></div>
+      </div>
+      <div class="home-guide">学完本页后，建议立刻做一遍 <a href="triangle-geometry-test.html">解三角形专项检测卷</a>。先不要打开解析，做完再逐题展开。</div>
+    </section>
+  </main>
+</body>
+</html>
