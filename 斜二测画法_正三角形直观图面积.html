@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>斜二测画法：正三角形直观图面积</title>
+  <style>
+    :root {
+      --ink: #1f2933;
+      --muted: #65758b;
+      --line: #d8dee8;
+      --paper: #fffdf8;
+      --soft: #f4f7fb;
+      --accent: #2364aa;
+      --accent-2: #d4522a;
+      --green: #25735b;
+      --warn: #a84b18;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #edf1f6;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      line-height: 1.75;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 28px));
+      margin: 28px auto;
+      padding: 34px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 44px rgba(31, 41, 51, 0.12);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(26px, 4vw, 40px);
+      color: #16202d;
+    }
+
+    h2 {
+      margin-top: 30px;
+      padding-left: 12px;
+      border-left: 5px solid var(--accent);
+      font-size: 24px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      font-size: 19px;
+      color: #23374d;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 4px 10px;
+      color: #17324d;
+      background: #dfeefe;
+      border: 1px solid #bdd7f6;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .problem {
+      margin-top: 20px;
+      padding: 18px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .answer {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 12px;
+      color: #fff;
+      background: var(--accent-2);
+      border-radius: 6px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .panel {
+      padding: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .formula {
+      margin: 12px 0;
+      padding: 12px 14px;
+      background: #f9fbff;
+      border: 1px solid #d9e5f5;
+      border-radius: 6px;
+      font-family: "Cambria Math", "Times New Roman", serif;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .key {
+      color: var(--accent-2);
+      font-weight: 800;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.4em;
+      margin: 10px 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .steps li::marker {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .quick {
+      padding: 16px;
+      background: #edf8f4;
+      border: 1px solid #bfe0d4;
+      border-radius: 8px;
+    }
+
+    .mistake {
+      padding: 16px;
+      background: #fff3e9;
+      border: 1px solid #efc7a8;
+      border-radius: 8px;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        margin: 14px auto;
+        padding: 20px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <span class="tag">高中数学 · 空间几何 · 斜二测画法</span>
+      <h1>正三角形的直观图面积怎么求？</h1>
+      <p class="note">抓住面积变化倍数：斜二测画法下，平面图形面积变为原面积的 <strong>√2 / 4</strong>。</p>
+    </header>
+
+    <section class="problem">
+      <h2>题目</h2>
+      <p>已知正三角形边长为 <strong>2</strong>，用斜二测画法画出该三角形的直观图，则所得直观图的面积为多少？</p>
+      <p>选项：A. √2 / 4　B. √6 / 4　C. 2√2　D. 2√6</p>
+      <div class="answer">答案：B. √6 / 4</div>
+    </section>
+
+    <section>
+      <h2>图形理解</h2>
+      <div class="grid">
+        <div class="panel">
+          <h3>原正三角形</h3>
+          <svg viewBox="0 0 360 250" role="img" aria-label="原正三角形示意图">
+            <defs>
+              <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="#2364aa"></path>
+              </marker>
+            </defs>
+            <line x1="55" y1="195" x2="305" y2="195" stroke="#1f2933" stroke-width="3"></line>
+            <line x1="55" y1="195" x2="180" y2="35" stroke="#1f2933" stroke-width="3"></line>
+            <line x1="305" y1="195" x2="180" y2="35" stroke="#1f2933" stroke-width="3"></line>
+            <line x1="180" y1="35" x2="180" y2="195" stroke="#d4522a" stroke-width="3" stroke-dasharray="7 6"></line>
+            <text x="47" y="218" font-size="18" fill="#1f2933">A</text>
+            <text x="302" y="218" font-size="18" fill="#1f2933">B</text>
+            <text x="174" y="28" font-size="18" fill="#1f2933">C</text>
+            <text x="171" y="218" font-size="18" fill="#1f2933">D</text>
+            <text x="165" y="130" font-size="18" fill="#d4522a">√3</text>
+            <text x="170" y="232" font-size="18" fill="#2364aa">2</text>
+            <line x1="70" y1="225" x2="290" y2="225" stroke="#2364aa" stroke-width="2" marker-end="url(#arrow-blue)"></line>
+            <line x1="290" y1="225" x2="70" y2="225" stroke="#2364aa" stroke-width="2" marker-end="url(#arrow-blue)"></line>
+          </svg>
+          <p class="caption">边长为 2，高为 √3，原面积为 √3。</p>
+        </div>
+
+        <div class="panel">
+          <h3>斜二测直观图</h3>
+          <svg viewBox="0 0 360 250" role="img" aria-label="斜二测直观图示意">
+            <line x1="55" y1="195" x2="305" y2="195" stroke="#1f2933" stroke-width="3"></line>
+            <line x1="55" y1="195" x2="242" y2="139" stroke="#1f2933" stroke-width="3"></line>
+            <line x1="305" y1="195" x2="242" y2="139" stroke="#1f2933" stroke-width="3"></line>
+            <line x1="180" y1="195" x2="242" y2="139" stroke="#d4522a" stroke-width="3" stroke-dasharray="7 6"></line>
+            <line x1="242" y1="139" x2="242" y2="195" stroke="#25735b" stroke-width="3" stroke-dasharray="5 5"></line>
+            <path d="M180 195 L210 195 L201 176" fill="none" stroke="#2364aa" stroke-width="2"></path>
+            <text x="46" y="218" font-size="18" fill="#1f2933">A′</text>
+            <text x="300" y="218" font-size="18" fill="#1f2933">B′</text>
+            <text x="238" y="132" font-size="18" fill="#1f2933">C′</text>
+            <text x="168" y="218" font-size="18" fill="#1f2933">D′</text>
+            <text x="201" y="162" font-size="17" fill="#d4522a">√3 / 2</text>
+            <text x="251" y="171" font-size="17" fill="#25735b">垂直高</text>
+            <text x="197" y="211" font-size="17" fill="#2364aa">45°</text>
+            <text x="170" y="235" font-size="18" fill="#2364aa">2</text>
+          </svg>
+          <p class="caption">纵向长度先减半，再按 45° 方向倾斜。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>解题思路</h2>
+      <ol class="steps">
+        <li>先求原正三角形面积。</li>
+        <li>利用斜二测画法的面积变化倍数。</li>
+        <li>原面积乘以 <span class="key">√2 / 4</span>，得到直观图面积。</li>
+      </ol>
+
+      <div class="formula">S<sub>原</sub> = (√3 / 4) × 2² = √3</div>
+      <div class="formula">S<sub>直观图</sub> = S<sub>原</sub> × (√2 / 4)</div>
+      <div class="formula">S<sub>直观图</sub> = √3 × (√2 / 4) = √6 / 4</div>
+    </section>
+
+    <section>
+      <h2>为什么乘 √2 / 4？</h2>
+      <p>斜二测画法可以理解为两个变化：</p>
+      <ul>
+        <li>横向长度不变。</li>
+        <li>纵向长度变成原来的 <strong>1 / 2</strong>，并且与横向成 <strong>45°</strong>。</li>
+      </ul>
+      <p>面积由“底 × 高”决定，纵向变斜后，真正有效的垂直高度还要乘 <strong>sin45°</strong>。</p>
+      <div class="formula">面积倍率 = (1 / 2) × sin45° = (1 / 2) × (√2 / 2) = √2 / 4</div>
+    </section>
+
+    <section>
+      <h2>快速解题模板</h2>
+      <div class="quick">
+        <p><strong>看到关键词：</strong>斜二测画法、直观图面积、平面图形。</p>
+        <p><strong>立刻使用：</strong></p>
+        <div class="formula">S<sub>直观图</sub> = S<sub>原图</sub> × √2 / 4</div>
+        <p><strong>如果反过来问原图面积：</strong></p>
+        <div class="formula">S<sub>原图</sub> = S<sub>直观图</sub> × 2√2</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>考察知识点</h2>
+      <ul>
+        <li><strong>正三角形面积公式：</strong>S = √3 / 4 × a²。</li>
+        <li><strong>斜二测画法规则：</strong>横不变，纵减半，纵轴与横轴成 45°。</li>
+        <li><strong>面积变化规律：</strong>直观图面积 = 原图面积 × √2 / 4。</li>
+        <li><strong>三角函数基础：</strong>sin45° = √2 / 2。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>易错点</h2>
+      <div class="mistake">
+        <ul>
+          <li><strong>误以为面积只变成一半。</strong>纵向长度是减半，但面积还要乘 sin45°。</li>
+          <li><strong>把斜线长度当作高。</strong>图中的斜方向长度不是三角形面积公式里的垂直高。</li>
+          <li><strong>正三角形面积算错。</strong>边长为 2 时，面积是 √3，不是 2 或 2√3。</li>
+          <li><strong>选项不做大小判断。</strong>直观图面积应小于原面积 √3，所以 2√2、2√6 这类偏大的选项可快速排除。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>一句话记忆</h2>
+      <div class="formula">斜二测面积：原图乘 √2 / 4；反求原图：直观图乘 2√2。</div>
+    </section>
+
+    <p class="footer">整理用途：高中数学题讲解页，可直接用浏览器打开。</p>
+  </main>
+</body>
+</html>
